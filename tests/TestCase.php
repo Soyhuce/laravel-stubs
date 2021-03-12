@@ -6,14 +6,17 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Soyhuce\SoyhuceStubs\SoyhuceStubsServiceProvider;
 
+/**
+ * @coversNothing
+ */
 class TestCase extends Orchestra
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Soyhuce\\SoyhuceStubs\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Soyhuce\\SoyhuceStubs\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 
@@ -24,7 +27,7 @@ class TestCase extends Orchestra
         ];
     }
 
-    public function getEnvironmentSetUp($app)
+    public function getEnvironmentSetUp($app): void
     {
         $app['config']->set('database.default', 'sqlite');
         $app['config']->set('database.connections.sqlite', [
