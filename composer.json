@@ -1,6 +1,6 @@
 {
     "name": "soyhuce/laravel-stubs",
-    "description": "Publish SoyHuce Laravel stubs",
+    "description": "Publish SoyHuce Laravel src/Commands/stubs",
     "keywords": [
         "soyhuce",
         "laravel-stubs"

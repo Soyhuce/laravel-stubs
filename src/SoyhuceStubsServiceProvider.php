@@ -2,9 +2,11 @@
 
 namespace Soyhuce\SoyhuceStubs;
 
+use Soyhuce\SoyhuceStubs\Commands\Application\SoyhuceControllerMakeCommand;
+use Soyhuce\SoyhuceStubs\Commands\Domain\SoyhuceActionMakeCommand;
+use Soyhuce\SoyhuceStubs\Commands\Domain\SoyhuceDTOMakeCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Soyhuce\SoyhuceStubs\Commands\SoyhuceStubsCommand;
 
 class SoyhuceStubsServiceProvider extends PackageServiceProvider
 {
@@ -12,6 +14,10 @@ class SoyhuceStubsServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('laravel-stubs')
-            ->hasCommand(SoyhuceStubsCommand::class);
+            ->hasCommands([
+                SoyhuceControllerMakeCommand::class,
+                SoyhuceActionMakeCommand::class,
+                SoyhuceDTOMakeCommand::class,
+            ]);
     }
 }
