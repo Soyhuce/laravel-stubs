@@ -2,10 +2,15 @@
 
 namespace Soyhuce\SoyhuceStubs\Tests;
 
+/**
+ * @coversNothing
+ */
 class ExampleTest extends TestCase
 {
-    /** @test */
-    public function true_is_true()
+    /**
+     * @test
+     */
+    public function trueIsTrue(): void
     {
         $this->assertTrue(true);
     }
