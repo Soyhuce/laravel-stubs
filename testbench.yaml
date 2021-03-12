@@ -1,2 +1,2 @@
 providers:
-  - Spatie\Skeleton\SkeletonServiceProvider
+  - Soyhuce\SoyhuceStubs\SoyhuceStubsServiceProvider
